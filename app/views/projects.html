@@ -1,0 +1,32 @@
+<div class="row">
+<div class="well">
+  <form action="#" class="form" role="form">
+    <fieldset>
+    
+    <div class="form-group col-md-11">
+        <input type="text" id="name" class="form-control col-sm-12" placeholder="Project Name" data-bind="value: editable.Name"/>
+    </div>
+      <div class="col-md-1">
+        <button class="btn btn-success btn-block" data-bind="click: add">
+          <i class="glyphicon glyphicon-plus"></i>
+        </button>
+      </div>
+    </fieldset>
+  </form>
+</div>
+  <!-- ko if: projects() -->
+  <ul class="list-group" data-bind="foreach : {data: projects, as : 'project'}">
+  		<li class="list-group-item clearfix">
+        <a data-bind="text: Name,attr: {href: '#project/' + Id}"></a>
+  			<div class="btn-group btn-group-xs pull-right">
+          <a href="" class="btn btn-warning" data-bind="click: $root.edit">
+            <i class="glyphicon glyphicon-pencil"></i>
+          </a>
+          <a href="" class="btn btn-danger" data-bind="click: $root.remove">
+            <i class="glyphicon glyphicon-remove"></i>
+          </a>
+        </div>
+  		</li>
+  </ul>
+  <!-- /ko -->
+</div>
